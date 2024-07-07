@@ -55,7 +55,7 @@ typedef struct StateContainer
         ACTIONHANDLERPTR Release;       // 0x0040e3ec
         ACTIONHANDLERPTR Message;       // 0x0040e3f0
 
-        ACTIONHANDLERPTR Active;        // TODO
+        ACTIONHANDLERPTR Active;        // 0x0040e3f4
     } Actions;
 
     WINDOWSTATECONTAINERPTR Window; // 0x0040e3f8

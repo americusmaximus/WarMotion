@@ -25,7 +25,10 @@ SOFTWARE.
 
 #include <RendererModule.Import.hxx>
 
+// 0x0040d064
 S32     RendererVideoMode           = DEFAULT_RENDERER_VIDEO_MODE_VALUE;
+
+// 0x0040d068
 BOOL    IsRendererVideoModeActive   = TRUE;
 
 // 0x00401570
