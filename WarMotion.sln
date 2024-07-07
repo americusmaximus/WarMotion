@@ -24,6 +24,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "winmm", "Source\winmm\winmm
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Yoink", "Source\Yoink\Yoink.vcxproj", "{69F5F276-CE3A-4BE7-8028-60E8E316525D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{64565D39-A19E-465B-B5B1-FEBA88C26A44}"
+	ProjectSection(SolutionItems) = preProject
+		WarMotion.x32.ini = WarMotion.x32.ini
+		WarMotion.x64.ini = WarMotion.x64.ini
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WarMotion", "Source\WarMotion\WarMotion.vcxproj", "{9CB01079-B641-4225-9D11-0DCFA0BB93A8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2BDFA936-39F2-408B-8DCF-81011BE21FE5} = {2BDFA936-39F2-408B-8DCF-81011BE21FE5}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -96,6 +107,14 @@ Global
 		{69F5F276-CE3A-4BE7-8028-60E8E316525D}.Release|x64.Build.0 = Release|x64
 		{69F5F276-CE3A-4BE7-8028-60E8E316525D}.Release|x86.ActiveCfg = Release|Win32
 		{69F5F276-CE3A-4BE7-8028-60E8E316525D}.Release|x86.Build.0 = Release|Win32
+		{9CB01079-B641-4225-9D11-0DCFA0BB93A8}.Debug|x64.ActiveCfg = Debug|x64
+		{9CB01079-B641-4225-9D11-0DCFA0BB93A8}.Debug|x64.Build.0 = Debug|x64
+		{9CB01079-B641-4225-9D11-0DCFA0BB93A8}.Debug|x86.ActiveCfg = Debug|Win32
+		{9CB01079-B641-4225-9D11-0DCFA0BB93A8}.Debug|x86.Build.0 = Debug|Win32
+		{9CB01079-B641-4225-9D11-0DCFA0BB93A8}.Release|x64.ActiveCfg = Release|x64
+		{9CB01079-B641-4225-9D11-0DCFA0BB93A8}.Release|x64.Build.0 = Release|x64
+		{9CB01079-B641-4225-9D11-0DCFA0BB93A8}.Release|x86.ActiveCfg = Release|Win32
+		{9CB01079-B641-4225-9D11-0DCFA0BB93A8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

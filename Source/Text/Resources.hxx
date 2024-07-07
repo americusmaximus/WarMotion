@@ -2,7 +2,7 @@
 // Microsoft Visual C++ generated include file.
 // Used by Resources.rc
 //
-#define IDS_GAME_1_TODO                 45
+#define IDS_GAME                        45
 #define IDS_SOUND_CHANNELS              46
 #define IDS_REVERSE_STEREO              47
 #define IDS_VIDEO_MODE                  48
