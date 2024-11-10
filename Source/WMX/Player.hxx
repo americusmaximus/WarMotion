@@ -31,7 +31,7 @@ typedef enum Status
     STATUS_NONE         = 0,
     STATUS_VICTORY      = 1,
     STATUS_DEFEAT       = 2,
-    STATUS_DRAW         = 3, // TODO
+    STATUS_DRAW         = 3,
     STATUS_LOADING      = 4,
     STATUS_QUIT         = 5, // RK_EXITTOOS
     STATUS_RESTART      = 6, // RK_RESTART
