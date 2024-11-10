@@ -27,7 +27,7 @@ SOFTWARE.
 
 #define MAX_WINDOW_STATE_TITLE_LENGTH 256
 
-typedef struct WindowStateContainer
+typedef struct Window
 {
     HINSTANCE   Instance;
     LPCSTR      Args;
@@ -41,4 +41,4 @@ typedef struct WindowStateContainer
     S32         Height;
     HMENU       Menu;
     BOOL        IsActive;
-} WINDOWSTATECONTAINER, * WINDOWSTATECONTAINERPTR;
+} WINDOW, * WINDOWPTR;

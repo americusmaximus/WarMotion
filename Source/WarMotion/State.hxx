@@ -28,46 +28,46 @@ SOFTWARE.
 
 typedef struct StateContainer
 {
-    BOOL IsIniActive;               // 0x0040e240
+    BOOL                                IsIniActive;    // 0x0040e240
 
     struct
     {
-        HMODULE Module; // 0x0040e244
-        RENDERERMODULESTATECONTAINERPTR State; // 0x0040e248
+        HMODULE                         Module;         // 0x0040e244
+        RENDERERMODULESTATECONTAINERPTR State;          // 0x0040e248
     } Renderer;
 
-    MODULESTATECONTAINERPTR Module; // 0x0040e3a0
+    MODULEPTR                           Module;         // 0x0040e3a0
 
     struct
     {
-        HMODULE Handle;             // 0x0040e3cc
+        HMODULE                         Handle;         // 0x0040e3cc
     } Text;
 
-    APPSTATECONTAINERPTR    App;    // 0x0040e3d0
+    APPPTR                              App;            // 0x0040e3d0
 
-    SOUNDSTATECONTAINERPTR  Sound;  // 0x0040e3d8
+    SOUNDPTR                            Sound;          // 0x0040e3d8
 
     struct
     {
-        ACTIONHANDLERPTR Activate;      // 0x0040e3e0
-        ACTIONHANDLERPTR Initialize;    // 0x0040e3e4
-        ACTIONHANDLERPTR Action;        // 0x0040e3e8
-        ACTIONHANDLERPTR Release;       // 0x0040e3ec
-        ACTIONHANDLERPTR Message;       // 0x0040e3f0
+        ACTIONHANDLERPTR                Activate;      // 0x0040e3e0
+        ACTIONHANDLERPTR                Initialize;    // 0x0040e3e4
+        ACTIONHANDLERPTR                Action;        // 0x0040e3e8
+        ACTIONHANDLERPTR                Release;       // 0x0040e3ec
+        ACTIONHANDLERPTR                Message;       // 0x0040e3f0
 
-        ACTIONHANDLERPTR Active;        // 0x0040e3f4
+        ACTIONHANDLERPTR                Active;        // 0x0040e3f4
     } Actions;
 
-    WINDOWSTATECONTAINERPTR Window; // 0x0040e3f8
+    WINDOWPTR                           Window;         // 0x0040e3f8
 
     struct
     {
-        LPSTR All;      // 0x0040e3fc
-        LPSTR* Args;    // 0x0040e400
-        U32 Count;      // 0x0040e404
+        LPSTR                           All;            // 0x0040e3fc
+        LPSTR*                          Args;           // 0x0040e400
+        U32                             Count;          // 0x0040e404
     } Arguments;
 
-    LOGGERSTATECONTAINERPTR Logger; // 0x0040e408
+    LOGGERPTR                           Logger;         // 0x0040e408
 } STATECONTAINER, * STATECONTAINERPTR;
 
 EXTERN STATECONTAINER State;

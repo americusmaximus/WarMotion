@@ -26,7 +26,7 @@ SOFTWARE.
 #include <stdlib.h>
 
 // 0x0040e3a8
-SOUNDSTATECONTAINER SoundState;
+SOUND SoundState;
 
 // 0x00402400
 VOID CLASSCALL ActivateSoundTrack(SOUNDTRACKPTR self)
@@ -73,7 +73,7 @@ VOID ReleaseSoundState(VOID)
 }
 
 // 0x00402470
-SOUNDSTATECONTAINERPTR CLASSCALL ActivateSoundState(SOUNDSTATECONTAINERPTR self)
+SOUNDPTR CLASSCALL ActivateSoundState(SOUNDPTR self)
 {
     self->Instance = NULL;
     self->Buffer = NULL;
@@ -82,7 +82,7 @@ SOUNDSTATECONTAINERPTR CLASSCALL ActivateSoundState(SOUNDSTATECONTAINERPTR self)
     self->Count = 0;
 
     self->Result = DS_OK;
-    self->State = SOUNDSTATE_NONE;
+    self->State = SOUNDRESULT_NONE;
 
     self->Unk07 = 500; // TODO
     self->Unk08 = -10000; // TODO
@@ -93,7 +93,7 @@ SOUNDSTATECONTAINERPTR CLASSCALL ActivateSoundState(SOUNDSTATECONTAINERPTR self)
 }
 
 // 0x00402660
-VOID CLASSCALL ReleaseSoundState(SOUNDSTATECONTAINERPTR self)
+VOID CLASSCALL ReleaseSoundState(SOUNDPTR self)
 {
     if (self->Tracks != NULL)
     {
@@ -114,13 +114,13 @@ VOID CLASSCALL ReleaseSoundState(SOUNDSTATECONTAINERPTR self)
 }
 
 // 0x004024c0
-BOOL CLASSCALL InitializeSoundState(SOUNDSTATECONTAINERPTR self, HWND window, CONST U32 count)
+BOOL CLASSCALL InitializeSoundState(SOUNDPTR self, HWND window, CONST U32 count)
 {
     ReleaseSoundState(self);
 
     self->Result = DirectSoundCreate(NULL, &self->Instance, NULL);
 
-    if (FAILED(self->Result)) { self->State = SOUNDSTATE_INITIALIZE_ERROR; return FALSE; }
+    if (FAILED(self->Result)) { self->State = SOUNDRESULT_INITIALIZE_ERROR; return FALSE; }
 
     self->Result = self->Instance->SetCooperativeLevel(window, DSSCL_PRIORITY);
 
@@ -128,7 +128,7 @@ BOOL CLASSCALL InitializeSoundState(SOUNDSTATECONTAINERPTR self, HWND window, CO
     {
         DIRECTSOUNDRELEASE(self->Instance);
 
-        self->State = SOUNDSTATE_SET_COOPERATIVE_LEVEL_ERROR;
+        self->State = SOUNDRESULT_SET_COOPERATIVE_LEVEL_ERROR;
 
         return FALSE;
     }
@@ -145,7 +145,7 @@ BOOL CLASSCALL InitializeSoundState(SOUNDSTATECONTAINERPTR self, HWND window, CO
     {
         DIRECTSOUNDRELEASE(self->Instance);
 
-        self->State = SOUNDSTATE_CREATE_MAIN_SOUND_BUFFER_ERROR;
+        self->State = SOUNDRESULT_CREATE_MAIN_SOUND_BUFFER_ERROR;
 
         return FALSE;
     }
