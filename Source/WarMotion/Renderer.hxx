@@ -30,6 +30,7 @@ SOFTWARE.
 #define RENDERER_VIDEO_MODE_640x480         0
 #define RENDERER_VIDEO_MODE_800x600         1
 #define RENDERER_VIDEO_MODE_1024x768        2
+#define RENDERER_VIDEO_MODE_COUNT           3
 
 EXTERN S32  RendererVideoMode;
 EXTERN BOOL IsRendererVideoModeActive;

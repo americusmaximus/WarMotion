@@ -58,10 +58,8 @@ STRINGVALUEPTR AcquireSettingsValue(STRINGVALUEPTR result, STRINGVALUE name, STR
 {
     AcquireStringValue(result, &value);
 
-    STRINGVALUE nm;
+    STRINGVALUE nm, val;
     AcquireStringValue(&nm, &name);
-
-    STRINGVALUE val;
     AcquireStringValue(&val, &value);
 
     AcquireSettingsValue(result, IDS_GAME, nm, val);
