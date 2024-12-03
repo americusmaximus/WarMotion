@@ -21,17 +21,19 @@
   <ItemGroup>
     <ClInclude Include="..\..\SDK\Yoink\Source\1.0.Q\Base.hxx" />
     <ClInclude Include="..\..\SDK\Yoink\Source\1.0.Q\Bink.h" />
+    <ClInclude Include="..\..\SDK\Yoink\Source\1.0.Q\Cursor.hxx" />
     <ClInclude Include="..\..\SDK\Yoink\Source\1.0.Q\Module.hxx" />
     <ClInclude Include="..\..\SDK\Yoink\Source\1.0.Q\Rad.h" />
     <ClInclude Include="..\..\SDK\Yoink\Source\1.0.Q\Resource.hxx" />
     <ClInclude Include="..\..\SDK\Yoink\Source\1.0.Q\State.hxx" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\SDK\Yoink\Source\1.0.Q\Cursor.cxx" />
     <ClCompile Include="..\..\SDK\Yoink\Source\1.0.Q\Module.cxx" />
     <ClCompile Include="..\..\SDK\Yoink\Source\1.0.Q\State.cxx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\SDK\Yoink\Source\1.0.Q\Module.def" />
+    <None Include="..\..\SDK\Yoink\Source\1.0.Q\Module.x32.def" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\SDK\Yoink\Source\1.0.Q\Resource.rc" />
@@ -131,6 +133,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>..\..\SDK\Yoink\Source\1.0.Q\Module.x32.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -156,6 +159,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>..\..\SDK\Yoink\Source\1.0.Q\Module.x32.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -177,6 +181,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>..\..\SDK\Yoink\Source\1.0.Q\Module.x64.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -202,6 +207,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>..\..\SDK\Yoink\Source\1.0.Q\Module.x64.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
