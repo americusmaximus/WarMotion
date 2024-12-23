@@ -33,7 +33,6 @@
 #define IDS_KEYBOARD_SCROLL             81
 #define IDS_MESSAGE_FADEOUT_TIME        82
 #define IDS_RANDOM_TRACK                83
-#define IDS_BRIGHTNESS                  84
 #define IDS_BRIGHTNESS_INDEX            84
 #define IDS_CD_TRACKS_NUMBER            85
 #define IDS_MUTE_MENU_MUSIC             86
@@ -44,7 +43,7 @@
 #define IDS_STRING150_TODO              150
 #define IDS_STRING151_TODO              151
 #define IDS_STRING152_TODO              152
-#define IDS_STRING153_TOO               153
+#define IDS_STRING153_TODO              153
 #define IDS_CONNECTION_TYPE             154
 #define IDS_DATA                        155
 #define IDS_SINGLE_PREFIX               156

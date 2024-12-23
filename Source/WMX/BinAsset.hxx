@@ -28,20 +28,30 @@ SOFTWARE.
 #define IMAGESPRITE_ITEM_COUNT_MASK     0x7F
 #define IMAGESPRITE_ITEM_COMPACT_MASK   0x80
 
+typedef struct BinAssetContent
+{
+    U32 Offset[1];
+} BINASSETCONTENT, * BINASSETCONTENTPTR;
+
+typedef struct BinAssetCollectionContent
+{
+    U32 Offset;
+    LPVOID Items[1];
+} BINASSETCOLLECTIONCONTENT, * BINASSETCOLLECTIONCONTENTPTR;
+
 #pragma pack(push, 1)
 typedef struct BinAsset
 {
-    LPVOID  Content;
-    BOOL    IsIndexed;
-    LPCSTR  Name;
-    U8      IsImage;
+    union
+    {
+        BINASSETCOLLECTIONCONTENTPTR    Collection;
+        BINASSETCONTENTPTR              Content;
+    };
+    BOOL                                IsCollection;
+    LPCSTR                              Name;
+    U8                                  IsImage;
 } BINASSET, * BINASSETPTR;
 #pragma pack(pop)
-
-typedef struct BinAssetHeader
-{
-    U32 Offset[1];
-} BINASSETHEADER, * BINASSETHEADERPTR;
 
 #pragma pack(push, 1)
 typedef struct ImageSpritePixel
@@ -56,8 +66,8 @@ typedef struct ImageSprite
 {
     S16                 X;
     S16                 Y;
-    U16                 Width;
-    U16                 Height;
+    S16                 Width;
+    S16                 Height;
     U8                  Unk04; // TODO
     U16                 Next;
     IMAGESPRITEPIXEL    Pixels[1];
@@ -77,8 +87,8 @@ typedef struct ImagePaletteSprite
 {
     S16                     X;
     S16                     Y;
-    U16                     Width;
-    U16                     Height;
+    S16                     Width;
+    S16                     Height;
     U8                      Unk04; // TODO
     U16                     Next;
     IMAGEPALETTESPRITEPIXEL Pixels[1];

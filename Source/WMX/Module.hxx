@@ -33,8 +33,8 @@ typedef struct Module
     HMODULE                         Handle;
     GAME                            Game;   // ToGame
     U8                              Unknown[348]; // TODO
-    SOUNDPTR          Sound;
+    SOUNDPTR                        Sound;
     RENDERERMODULESTATECONTAINERPTR Renderer;
     HMODULE                         Text;
-    LPDIRECTPLAY3A                  Network;
+    LPDIRECTPLAY3A                  Network; // TODO Modern network mode?
 } MODULE, * MODULEPTR;

@@ -20,12 +20,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include "BinFile.hxx"
-#include "Native.Basic.hxx"
+#pragma once
 
-typedef struct Logger
+#include "Basic.hxx"
+
+#ifdef _WIN64
+typedef U64 BFH;
+#else
+typedef U32 BFH;
+#endif
+
+typedef struct BinFile
 {
-    BINFILE File;
-    HWND    HWND;
-    HANDLE  Mutex;
-} LOGGER, * LOGGERPTR;
+    BFH Value;
+} BINFILE, * BINFILEPTR;

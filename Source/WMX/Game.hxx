@@ -38,26 +38,30 @@ typedef enum GameDifficulty
     GAMEDIFFICULTY_EASY         = 1,
     GAMEDIFFICULTY_MEDIUM       = 2,
     GAMEDIFFICULTY_HARD         = 3,
-    GAMEDIFFICULTY_FORCE_DWORD  = 0x7FFFFFFF
+    GAMEDIFFICULTY_UNKNOWN      = 0xFFFFFFFF
 } GAMEDIFFICULTY, * GAMEDIFFICULTYPTR;
 
-typedef struct GameStateContainer
+#define MAX_GAMEDIFFICULTY_VALUE    (U32)(GAMEDIFFICULTY_HARD)
+
+#pragma pack(push, 1)
+typedef struct Game
 {
-    BOOL                        IsNetwork;
-    GAMEDIFFICULTY              Difficulty;
-    S32                         Unk02; // TODO
-    S32                         Unk03; // TODO
-    S32                         Unk04; // TODO
-    S32                         Unk05; // TODO
-    S32                         Unk06; // TODO
-    S32                         Unk07; // TODO
-    U32                         TurnDelay;
-    S32                         Unk09; // TODO
-    U32                         Ticks;
-    STATUS                      Status;
-    S32                         NextMap;
-    S32                         NextMission;
-    PLAYER                      Players[MAX_PLAYER_COUNT];
-    U32                         Time;
-    CHAR                        SaveFile[MAX_FILE_NAME_LENGTH]; // TODO name
-} GAME, * GAMESTATECONTAINERPTR;
+    BOOL            IsNetwork;
+    GAMEDIFFICULTY  Difficulty;
+    S32             Unk02; // TODO
+    S32             Unk03; // TODO
+    S32             Unk04; // TODO
+    S32             Unk05; // TODO
+    S32             Unk06; // TODO
+    S32             Unk07; // TODO
+    U32             TurnDelay;
+    S32             Unk09; // TODO
+    U32             Ticks;
+    STATUS          Status;
+    S32             NextMap;
+    S32             NextMission;
+    PLAYER          Players[MAX_PLAYER_COUNT];
+    U32             Time;
+    CHAR            SaveFile[MAX_FILE_NAME_LENGTH]; // TODO name
+} GAME, * GAMEPTR;
+#pragma pack(pop)
