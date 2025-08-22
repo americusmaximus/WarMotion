@@ -1,5 +1,5 @@
 # War Motion
-![War Motion](./Extras/Cover1.png)
+![War Motion](./Extras/ImageMid.png)
 
 ## Project
 War Storm is an open source implementation of Fireglow Games' [Sudden Strike Resource War](https://en.wikipedia.org/wiki/Sudden_Strike_2) from 2004, with the 2.4 patch.
