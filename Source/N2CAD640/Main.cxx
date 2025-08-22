@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2024 Americus Maximus
+Copyright (c) 2024 - 2025 Americus Maximus
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,40 +20,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#pragma once
+#include "Basic.hxx"
+#include "Native.Basic.hxx"
 
-#include "BinFile.hxx"
-
-#define INVALID_BINARCHIVE_INDEX    (-1)
-
-#define BINARCHIVE_MAGIC            0x53465A46 /* FZFS */
-
-typedef enum BinArchiveType
-{
-    BINARCHIVETYPE_NONE         = 0,
-    BINARCHIVETYPE_FILE         = 1,
-    BINARCHIVETYPE_DIRECTORY    = 2,
-    BINARCHIVETYPE_FORCE_DWORD  = 0x7FFFFFF
-} BINARCHIVETYPE, * BINARCHIVETYPEPTR;
-
-typedef struct BinArchiveHeader
-{
-    U32                 Magic;
-    U32                 Offset;
-} BINARCHIVEHEADER, * BINARCHIVEHEADERPTR;
-
-typedef struct BinArchiveDescriptor
-{
-    U32                 Size;
-    U32                 Count;
-    U32                 Length;
-} BINARCHIVEDESCRIPTOR, * BINARCHIVEDESCRIPTORPTR;
-
-typedef struct BinArchive
-{
-    BINARCHIVETYPE      Type;
-    CHAR                Name[MAX_FILE_NAME_LENGTH];
-    U32*                Offsets;
-    LPSTR               Names;
-    BINFILE             File;
-} BINARCHIVE, * BINARCHIVEPTR;
+// 0x1000ae27
+BOOL APIENTRY Main(HMODULE, DWORD, LPVOID) { return TRUE; }
