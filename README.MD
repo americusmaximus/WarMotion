@@ -1,8 +1,8 @@
 # War Motion
-![War Motion](./Extras/LogoMedium.jpg)
+![War Motion](./Extras/Cover1.png)
 
 ## Project
-War Storm is an open source implementation of Fireglow Games' [Sudden Strike Resource War](https://en.wikipedia.org/wiki/Sudden_Strike_2) from 2002, with the 2.4 patch.
+War Storm is an open source implementation of Fireglow Games' [Sudden Strike Resource War](https://en.wikipedia.org/wiki/Sudden_Strike_2) from 2004, with the 2.4 patch.
 
 ## Goals
 There are multiple goals this project tries to achieve:
@@ -23,7 +23,7 @@ git clone --recurse-submodules https://github.com/americusmaximus/WarStorm
 5. Intel JPEG library
 
 ## Notes
-1. I used GOG.com's Sudden Strike Resource War version [13581](setup_sudden_strike_resource_war_2.4_(13581).exe) of the game.
+1. I used GOG.com's Sudden Strike Resource War version [13581](https://www.google.com/search?q=setup_sudden_strike_resource_war_2.4_(13581).exe) of the game.
 2. The game is structured in a way where the executable is just a glue for separate menu and game modules, which are in their turn can use different renderer modules.
 3. The GOG.com's version of the game uses Ogg Vorbis for the game's music. It looks like this was a recent change and a requirement for the game publishing, I believe original game shipped with mp3 files. In order to support Ogg Vorbis, the games has its own WinMM.dll library to support the file format, otherwise it is mostly a wrapper of the system library.
 4. The original game used zlib version 1.1.3, which I upgraded to 1.3.1 for proper 64-bit support.
